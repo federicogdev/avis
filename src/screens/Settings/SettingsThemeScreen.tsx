@@ -3,14 +3,14 @@ import React from "react";
 
 type Props = {};
 
-const BookmarksScreen = (props: Props) => {
+const SettingsThemeScreen = (props: Props) => {
   return (
     <View>
-      <Text>BookmarksScreen</Text>
+      <Text>SettingsThemeScreen</Text>
     </View>
   );
 };
 
-export default BookmarksScreen;
+export default SettingsThemeScreen;
 
 const styles = StyleSheet.create({});
