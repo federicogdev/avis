@@ -1,16 +1,19 @@
-import { View, Text } from "react-native";
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { AppTabs } from "./src/navigation/AppTabs";
-import { AppStack } from "./src/navigation/AppStack";
+import { Routes } from "./src/navigation/Routes";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 type Props = {};
 
+const client = new QueryClient();
+
 const App = (props: Props) => {
   return (
-    <NavigationContainer>
-      <AppStack />
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <QueryClientProvider client={client}>
+        <Routes />
+      </QueryClientProvider>
+    </SafeAreaProvider>
   );
 };
 

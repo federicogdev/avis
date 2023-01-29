@@ -22,7 +22,7 @@ const Stack = createNativeStackNavigator<AppStackParams>();
 
 export const AppStack = () => {
   const { colors } = useTheme();
-  const isFirstVisit = false;
+  const isFirstVisit = true;
   return (
     <Stack.Navigator
       screenOptions={{
