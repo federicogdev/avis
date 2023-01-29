@@ -8,7 +8,9 @@ import {
   Text,
   TouchableOpacity,
   Dimensions,
+  StatusBar,
 } from "react-native";
+import SafeArea from "../../components/layout/SafeArea";
 import { AppStackParams } from "../../types/navigation";
 
 const { width, height } = Dimensions.get("window");
@@ -24,7 +26,7 @@ const OnboardingWelcomeScreen: FC<IOnboardingWelcomeScreenProps> = ({
   navigation,
 }) => {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeArea>
       <Image
         style={styles.background}
         source={{
@@ -46,7 +48,7 @@ const OnboardingWelcomeScreen: FC<IOnboardingWelcomeScreenProps> = ({
           </View>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </SafeArea>
   );
 };
 
@@ -55,7 +57,6 @@ export default OnboardingWelcomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#1b1d1b",
   },
   background: {
     position: "absolute",

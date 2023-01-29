@@ -28,8 +28,8 @@ export const AppStack = () => {
       screenOptions={{
         headerLargeStyle: { backgroundColor: colors.background },
         headerStyle: { backgroundColor: colors.card },
-        headerShadowVisible: false,
-        headerTransparent: true,
+        // headerShadowVisible: false,
+        // headerTransparent: true,
       }}
     >
       {isFirstVisit ? (
@@ -47,7 +47,7 @@ export const AppStack = () => {
           <Stack.Screen
             name="OnboardingCountryScreen"
             component={OnboardingCountryScreen}
-            options={{ headerShown: false }}
+            options={{ headerLargeTitle: true, headerTitle: "Select Country" }}
           />
         </>
       ) : (
