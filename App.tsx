@@ -3,6 +3,7 @@ import { Routes } from "./src/navigation/Routes";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { SettingsContextProvider } from "./src/context/SettingsContext";
+import { BookmarksContextProvider } from "./src/context/BookmarksContext";
 
 type Props = {};
 
@@ -13,7 +14,9 @@ const App = (props: Props) => {
     <SafeAreaProvider>
       <QueryClientProvider client={client}>
         <SettingsContextProvider>
-          <Routes />
+          <BookmarksContextProvider>
+            <Routes />
+          </BookmarksContextProvider>
         </SettingsContextProvider>
       </QueryClientProvider>
     </SafeAreaProvider>

@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useContext, useState } from "react";
 import {
   ActivityIndicator,
   Image,
@@ -12,6 +12,9 @@ import { useTheme } from "@react-navigation/native";
 import { Article } from "../types/settings";
 import Typography from "./layout/Typography";
 import Spacer from "./layout/Spacer";
+import NewsTileBookmarkButton from "./NewsTileBookmarkButton";
+import { openLink } from "../utils/openLink";
+import { SettingsContext } from "../context/SettingsContext";
 
 interface INewsTileProps {
   article: Article;
@@ -19,9 +22,10 @@ interface INewsTileProps {
 
 const NewsTile: FC<INewsTileProps> = ({ article }) => {
   const { colors } = useTheme();
+  const { browser } = useContext(SettingsContext);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => openLink(article.url, browser)}>
       {isLoading && (
         <View
           style={[styles.placeholderImage, { backgroundColor: colors.card }]}
@@ -47,8 +51,11 @@ const NewsTile: FC<INewsTileProps> = ({ article }) => {
 
       <Spacer y={20} />
 
-      <View>
-        <Typography variant="bold">{article.title}</Typography>
+      <View style={styles.row}>
+        <Typography variant="bold" style={{ flex: 0.9 / 1 }}>
+          {article.title}
+        </Typography>
+        <NewsTileBookmarkButton article={article} />
       </View>
 
       <Spacer y={10} />
