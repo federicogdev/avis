@@ -35,7 +35,7 @@ export const CustomLightTheme: ExtendedTheme = {
     surface: "#EBEBEB",
     text: "rgb(0, 0, 0)",
     subtext: "rgb(102, 102, 102)",
-    separator: "rgb(194, 194, 195)",
+    separator: "#f0f0f0",
     highlight: "rgb(199, 198, 203)",
   },
 };
