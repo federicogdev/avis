@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useTheme } from "@react-navigation/native";
 
@@ -17,19 +17,30 @@ import SettingsCountryScreen from "../screens/Settings/SettingsCountryScreen";
 import SettingsCategoriesScreen from "../screens/Settings/SettingsCategoriesScreen";
 import SettingsBrowserScreen from "../screens/Settings/SettingsBrowserScreen";
 import { AppStackParams } from "../types/navigation";
+import { SettingsContext } from "../context/SettingsContext";
+import { ActivityIndicator, View } from "react-native";
 
 const Stack = createNativeStackNavigator<AppStackParams>();
 
 export const AppStack = () => {
   const { colors } = useTheme();
-  const isFirstVisit = true;
+  const { isFirstVisit, isFirstVisitLoading } = useContext(SettingsContext);
+
+  if (isFirstVisitLoading) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <ActivityIndicator size={200} color={colors.primary} />
+      </View>
+    );
+  }
+
   return (
     <Stack.Navigator
       screenOptions={{
         headerLargeStyle: { backgroundColor: colors.background },
         headerStyle: { backgroundColor: colors.card },
-        // headerShadowVisible: false,
-        // headerTransparent: true,
+        headerShadowVisible: false,
+        headerTransparent: true,
       }}
     >
       {isFirstVisit ? (
@@ -42,7 +53,10 @@ export const AppStack = () => {
           <Stack.Screen
             name="OnboardingCategoriesScreen"
             component={OnboardingCategoriesScreen}
-            options={{ headerShown: false }}
+            options={{
+              headerLargeTitle: true,
+              headerTitle: "Select Categories",
+            }}
           />
           <Stack.Screen
             name="OnboardingCountryScreen"
