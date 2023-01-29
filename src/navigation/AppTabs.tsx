@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Ionicons } from "@expo/vector-icons";
 
 import HomeScreen from "../screens/Home/HomeScreen";
-import MyCategoriesScreen from "../screens/Home/MyCategoriesScreen";
+import MyNewsScreen from "../screens/Home/MyNewsScreen";
 import SettingsScreen from "../screens/Settings/SettingsScreen";
 
 import { AppTabsParams } from "../types/navigation";
@@ -33,7 +33,7 @@ const HomeScreenStack = () => {
   );
 };
 
-const MyCategoriesScreenStack = () => {
+const MyNewsScreenStack = () => {
   const { colors } = useTheme();
 
   return (
@@ -46,10 +46,7 @@ const MyCategoriesScreenStack = () => {
         headerShadowVisible: false,
       }}
     >
-      <MyCategoriesStack.Screen
-        component={MyCategoriesScreen}
-        name="My Categories"
-      />
+      <MyCategoriesStack.Screen component={MyNewsScreen} name="My News" />
     </MyCategoriesStack.Navigator>
   );
 };
@@ -97,8 +94,8 @@ export const AppTabs = () => {
         }}
       />
       <Tabs.Screen
-        component={MyCategoriesScreenStack}
-        name="MyCategoriesScreen"
+        component={MyNewsScreenStack}
+        name="MyNewsScreen"
         options={{
           tabBarLabel: "My Categories",
           tabBarIcon: ({ color, focused }) => (

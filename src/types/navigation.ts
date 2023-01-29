@@ -1,13 +1,14 @@
 export type AppTabsParams = {
   HomeScreen: undefined;
-  MyCategoriesScreen: undefined;
+  MyNewsScreen: undefined;
   SettingsScreen: undefined;
 };
 
 export type AppStackParams = {
   AppTabs: undefined;
   BookmarksScreen: undefined;
-  NewsListScreen: { category: string };
+  NewsByCategoryScreen: { category: string };
+  NewsBySourceScreen: { source: string; id: string };
   OnboardingWelcomeScreen: undefined;
   OnboardingCategoriesScreen: undefined;
   OnboardingCountryScreen: undefined;

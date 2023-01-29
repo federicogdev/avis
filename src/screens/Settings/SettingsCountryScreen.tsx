@@ -75,7 +75,7 @@ const SettingsCountryScreen = (props: Props) => {
 export default SettingsCountryScreen;
 
 const styles = StyleSheet.create({
-  radioWrapper: { marginLeft: 24, borderTopWidth: 0.5 },
+  radioWrapper: { marginLeft: 24, borderTopWidth: 0.3 },
   radio: {
     position: "relative",
     paddingTop: 12,

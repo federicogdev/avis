@@ -4,7 +4,7 @@ import { useTheme } from "@react-navigation/native";
 
 import { AppTabs } from "./AppTabs";
 import BookmarksScreen from "../screens/Home/BookmarksScreen";
-import NewsListScreen from "../screens/Home/NewsListScreen";
+import NewsByCategoryScreen from "../screens/Home/NewsByCategoryScreen";
 
 //Onboarding
 import OnboardingWelcomeScreen from "../screens/Onboarding/OnboardingWelcomeScreen";
@@ -19,6 +19,7 @@ import SettingsBrowserScreen from "../screens/Settings/SettingsBrowserScreen";
 import { AppStackParams } from "../types/navigation";
 import { SettingsContext } from "../context/SettingsContext";
 import { ActivityIndicator, View } from "react-native";
+import NewsBySourceScreen from "../screens/Home/NewsBySourceScreen";
 
 const Stack = createNativeStackNavigator<AppStackParams>();
 
@@ -77,11 +78,19 @@ export const AppStack = () => {
             options={{ headerLargeTitle: true, headerTitle: "Bookmarked News" }}
           />
           <Stack.Screen
-            name="NewsListScreen"
-            component={NewsListScreen}
+            name="NewsByCategoryScreen"
+            component={NewsByCategoryScreen}
             options={({ route }) => ({
               headerLargeTitle: true,
               headerTitle: route.params.category,
+            })}
+          />
+          <Stack.Screen
+            name="NewsBySourceScreen"
+            component={NewsBySourceScreen}
+            options={({ route }) => ({
+              headerLargeTitle: true,
+              headerTitle: route.params.source,
             })}
           />
           <Stack.Screen

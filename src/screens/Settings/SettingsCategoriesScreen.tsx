@@ -55,10 +55,7 @@ const SettingsCategoriesScreen = (props: Props) => {
                   {getCategoryIcon(item.name, colors.subtext)}
                 </View>
                 <View style={styles.radioTexts}>
-                  <Typography
-                    variant="bold"
-                    style={{ textTransform: "capitalize" }}
-                  >
+                  <Typography style={{ textTransform: "capitalize" }}>
                     {item.name}
                   </Typography>
                 </View>
