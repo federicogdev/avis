@@ -1,10 +1,4 @@
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
 import React, { FC, useContext } from "react";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -53,7 +47,8 @@ const MyNewsScreen: FC<IMyNewsScreenProps> = ({ navigation }) => {
                   style={styles.row}
                   onPress={() =>
                     navigation.push("NewsByCategoryScreen", {
-                      category: el.name,
+                      category:
+                        el.name.charAt(0).toUpperCase() + el.name.slice(1),
                     })
                   }
                 >

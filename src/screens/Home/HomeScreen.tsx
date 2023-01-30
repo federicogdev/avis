@@ -46,7 +46,7 @@ const HomeScreen = (props: Props) => {
         <View
           style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
         >
-          <ActivityIndicator color="red" size={200} />
+          <ActivityIndicator color={colors.primary} size={200} />
         </View>
       </SafeArea>
     );
