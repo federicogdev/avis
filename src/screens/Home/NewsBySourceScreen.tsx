@@ -11,11 +11,10 @@ import { AppStackParams } from "../../types/navigation";
 import SafeArea from "../../components/layout/SafeArea";
 import { SettingsContext } from "../../context/SettingsContext";
 import { BASE_URL, API_KEY } from "@env";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { Article } from "../../types/settings";
 import axios from "axios";
 import NewsTile from "../../components/NewsTile";
-import Typography from "../../components/layout/Typography";
 
 interface INewsResponse {
   status: string;

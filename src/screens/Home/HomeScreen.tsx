@@ -9,7 +9,7 @@ import React, { useContext } from "react";
 import { API_KEY, BASE_URL } from "@env";
 import SafeArea from "../../components/layout/SafeArea";
 import { SettingsContext } from "../../context/SettingsContext";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { Article } from "../../types/settings";
 import axios from "axios";
 import NewsTile from "../../components/NewsTile";
