@@ -22,6 +22,13 @@ const SettingsCountryScreen = (props: Props) => {
   return (
     <SafeArea>
       <FlatList
+        ListHeaderComponent={
+          <View style={{ paddingHorizontal: 15, paddingVertical: 10 }}>
+            <Typography color="subtext">
+              Choose your preferred country.
+            </Typography>
+          </View>
+        }
         showsVerticalScrollIndicator={false}
         data={countries}
         keyExtractor={(item) => item.iso}

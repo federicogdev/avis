@@ -16,6 +16,7 @@ import { useTheme } from "@react-navigation/native";
 import { FontAwesome } from "@expo/vector-icons";
 import Typography from "../../components/layout/Typography";
 import { getCategoryIcon } from "../../utils/getCategoryIcon";
+import Spacer from "../../components/layout/Spacer";
 
 type Props = {};
 
@@ -33,6 +34,18 @@ const SettingsCategoriesScreen = (props: Props) => {
   return (
     <SafeArea>
       <FlatList
+        ListHeaderComponent={
+          <View style={{ paddingHorizontal: 15, paddingVertical: 10 }}>
+            <Typography color="subtext">
+              Choose your preferred categories.
+            </Typography>
+            <Spacer y={5} />
+            <Typography color="subtext" size={13}>
+              Selected categories will be displayed in the My News screen
+              accordingly.
+            </Typography>
+          </View>
+        }
         data={categories}
         keyExtractor={(item) => item.name}
         renderItem={({ item, index }) => (
@@ -52,7 +65,7 @@ const SettingsCategoriesScreen = (props: Props) => {
             >
               <View style={[styles.radio]}>
                 <View style={styles.radioIcon}>
-                  {getCategoryIcon(item.name, colors.subtext)}
+                  {getCategoryIcon(item.name, colors.primary)}
                 </View>
                 <View style={styles.radioTexts}>
                   <Typography style={{ textTransform: "capitalize" }}>

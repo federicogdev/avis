@@ -14,18 +14,18 @@ import { SettingsContext } from "../../context/SettingsContext";
 import SafeArea from "../../components/layout/SafeArea";
 import Typography from "../../components/layout/Typography";
 import { Themes } from "../../types/settings";
+import Spacer from "../../components/layout/Spacer";
 
 type Props = {};
 
 const SettingsThemeScreen = (props: Props) => {
-  const { countries, selectCountry, selectedCountry, theme, selectTheme } =
-    useContext(SettingsContext);
+  const { theme, selectTheme } = useContext(SettingsContext);
   const { colors } = useTheme();
 
   const themes: Themes[] = ["automatic", "dark", "light"];
 
-  const getThemeIcon = (theme: Themes) => {
-    switch (theme) {
+  const getThemeIcon = (_theme: Themes) => {
+    switch (_theme) {
       case "automatic":
         return <Feather name="box" size={24} color={colors.primary} />;
       case "dark":
@@ -39,6 +39,18 @@ const SettingsThemeScreen = (props: Props) => {
   return (
     <SafeArea>
       <FlatList
+        ListHeaderComponent={
+          <View style={{ paddingHorizontal: 15, paddingVertical: 10 }}>
+            <Typography color="subtext">
+              Choose your preferred app look.
+            </Typography>
+            <Spacer y={5} />
+            <Typography color="subtext" size={13}>
+              Automatic will detect the system color scheme and set the app
+              accordingly.
+            </Typography>
+          </View>
+        }
         showsVerticalScrollIndicator={false}
         data={themes}
         keyExtractor={(item) => item}
