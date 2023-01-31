@@ -53,7 +53,7 @@ const MyNewsScreen: FC<IMyNewsScreenProps> = ({ navigation }) => {
                   }
                 >
                   <View style={styles.rowIcon}>
-                    {getCategoryIcon(el.name, colors.subtext)}
+                    {getCategoryIcon(el.name, colors.primary)}
                   </View>
 
                   <Typography style={{ textTransform: "capitalize" }}>
