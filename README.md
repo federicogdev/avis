@@ -39,7 +39,7 @@ NewsAPI (https://newsapi.org)
   <img src="https://user-images.githubusercontent.com/123827714/216626212-46b7846e-1cb6-4acf-bca0-a46648741275.png" width="200">
 </p>
 
-## TODOs
+## TODO
 
 - Work on more source for each country
 - Polish UI elements
