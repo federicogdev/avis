@@ -32,6 +32,7 @@ NewsAPI (https://newsapi.org)
   
 </p>
 <br>
+
 <p align="center">
   <img src="https://user-images.githubusercontent.com/123827714/216626200-82b4f159-c89b-4b8f-8ba4-7d62abffe1c0.png" width="200">
   <img src="https://user-images.githubusercontent.com/123827714/216626202-1fea8a6f-76da-411b-b15c-38a6ca94d7a1.png" width="200">
