@@ -6,7 +6,7 @@
 - Dark theme support
 - Bookmark your news
 
-## Tech Stack
+## Techs Stack
 
 - React Native
 - TypeScript
