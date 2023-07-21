@@ -4,7 +4,7 @@
 
 - Browse between headlines or categorized news for more than 50 country
 - Dark theme support
-- Bookmark your news
+- Bookmark your favourite news
 
 ## Techs Stack
 
