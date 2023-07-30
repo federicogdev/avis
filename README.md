@@ -18,7 +18,7 @@
 
 NewsAPI (https://newsapi.org)
 
-## Screen Record
+## Screen Recording
 
 <img src="https://user-images.githubusercontent.com/123827714/216619995-1ddc1b28-8f52-4fd3-b4fa-b1a63c747205.gif" width="300">
 
